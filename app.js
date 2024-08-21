@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+app.use(cors({
+  origin: 'http://Frontend-env.eba-usrrcxcp.ap-south-1.elasticbeanstalk.com'
+}));
 app.use(bodyParser.json());
 
 app.get('/api/message', (req, res) => {
