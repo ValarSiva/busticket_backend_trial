@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 
 //app.use(cors());
 
-const frontendDomain = '*';
+const frontendDomain = 'http://Frontend-env-1.eba-usrrcxcp.ap-south-1.elasticbeanstalk.com';
 
 const corsOptions = {
   origin: frontendDomain,
