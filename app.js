@@ -5,7 +5,18 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+//app.use(cors());
+
+const frontendDomain = 'http://Frontend-env-1.eba-usrrcxcp.ap-south-1.elasticbeanstalk.com';
+
+const corsOptions = {
+  origin: frontendDomain,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Specify allowed headers
+  credentials: true, // Enable if your API uses cookies or other credentials
+};
+
+app.use(cors(corsOptions));
 
 /*app.use(cors({
   origin: 'http://Frontend-env-1.eba-usrrcxcp.ap-south-1.elasticbeanstalk.com', // Your frontend URL
