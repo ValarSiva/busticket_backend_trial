@@ -5,11 +5,13 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors({
+app.use(cors());
+
+/*app.use(cors({
   origin: 'http://Frontend-env-1.eba-usrrcxcp.ap-south-1.elasticbeanstalk.com', // Your frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'] // Allowed headers
-}));
+}));*/
 app.use(bodyParser.json());
 
 app.get('/api/message', (req, res) => {
